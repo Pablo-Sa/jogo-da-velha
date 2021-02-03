@@ -1,4 +1,4 @@
-package br.com.poc.jogo.velha;
+package br.com.poc.tic.tac.toe;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
