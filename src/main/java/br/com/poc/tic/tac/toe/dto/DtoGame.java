@@ -1,11 +1,9 @@
-package br.com.poc.tic.tac.toe.dto.erros;
-
-import java.util.ArrayList;
-import java.util.List;
+package br.com.poc.tic.tac.toe.dto;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import br.com.poc.tic.tac.toe.config.beancustomvalidators.GameInputInvalid;
 import br.com.poc.tic.tac.toe.entity.EntityGame;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,14 +16,15 @@ public class DtoGame {
 
 	@NotEmpty
 	@NotNull
-	private List<String> jogo = new ArrayList<String>(2);
-	
+	@GameInputInvalid
+	private String[] jogo = new String[3];
+
 	public EntityGame convertEntityGame() {
-		
 		StringBuilder positionsGame = new StringBuilder();
-		this.jogo.forEach(item ->{
-			positionsGame.append(item);
-		});
+
+		for(String item: this.jogo) {
+			positionsGame.append(item.toUpperCase());			
+		}
 		
 		EntityGame entityGame = new EntityGame();
 		entityGame.setPositionsGame(positionsGame.toString());

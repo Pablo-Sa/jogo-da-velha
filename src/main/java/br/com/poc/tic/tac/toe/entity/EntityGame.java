@@ -8,7 +8,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class EntityGame {
-
 	private String positionsGame = null;
 }
 

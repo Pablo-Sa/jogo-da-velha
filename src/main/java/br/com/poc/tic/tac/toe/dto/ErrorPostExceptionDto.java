@@ -1,4 +1,4 @@
-package br.com.poc.tic.tac.toe.dto.erros;
+package br.com.poc.tic.tac.toe.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

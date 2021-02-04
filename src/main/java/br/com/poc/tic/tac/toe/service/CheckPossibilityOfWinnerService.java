@@ -4,77 +4,37 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CheckPossibilityOfWinnerService {
+	private int[] rules = new int[8];
 	private static final int CIRCLE_WINNER = 0;
-	private static final int CROSS_WINNER = 1;
-	private boolean existsWinner = Boolean.FALSE;
-	private int existsWinnerCounterAuxiliary = 0;
+	private static final int CROSS_WINNER = 3;
+	private static final int firstPossibility   = 0;
+	private static final int secondPossibility  = 1;
+	private static final int thirdPossibility   = 2;
+	private static final int fourthPossibility  = 3;
+	private static final int fifthPossibility   = 4;
+	private static final int sixthPossibility   = 5;
+	private static final int seventhPossibility = 6;
+	private static final int eighthPossibility  = 7;
+	private boolean foundWinner = Boolean.FALSE;
 
 	public boolean checkAllPossibilityOfWinner(int[] jogo) {
-		this.checkFirstPossibilityOfWinner(jogo);
-		this.checkSecondPossibilityOfWinner(jogo);
-		this.checkThirdPossibilityOfWinner(jogo);
-		this.checkFourthPossibilityOfWinner(jogo);
-		this.checkFifthPossibilityOfWinner(jogo);
-		this.checkSixthPossibilityOfWinner(jogo);
-		this.checkSeventhPossibilityOfWinner(jogo);
-		this.checkEighthPossibilityOfWinner(jogo);
-		return existsWinner;
+		this.rules[firstPossibility]   = jogo[0] + jogo[1] + jogo[2];
+		this.rules[secondPossibility]  = jogo[3] + jogo[4] + jogo[5];
+		this.rules[thirdPossibility]   = jogo[6] + jogo[7] + jogo[8];
+		this.rules[fourthPossibility]  = jogo[0] + jogo[3] + jogo[6];
+		this.rules[fifthPossibility]   = jogo[1] + jogo[4] + jogo[7];
+		this.rules[sixthPossibility]   = jogo[2] + jogo[5] + jogo[8];
+		this.rules[seventhPossibility] = jogo[0] + jogo[4] + jogo[8];
+		this.rules[eighthPossibility]  = jogo[2] + jogo[4] + jogo[6];
+		
+		for (int i = 0; i < rules.length; i++) {
+			this.foundWinner = this.rules[i] == CIRCLE_WINNER || this.rules[i] == CROSS_WINNER ? Boolean.TRUE: Boolean.FALSE;
+			
+			if(this.foundWinner) {
+				return this.foundWinner;
+			}
+		}
+		
+		return Boolean.FALSE;
 	}
-
-	public boolean checkFirstPossibilityOfWinner(int[] jogo) {
-		this.existsWinnerCounterAuxiliary = jogo[0] + jogo[1] + jogo[2];
-		this.existsWinner = this.existsWinnerCounterAuxiliary == CIRCLE_WINNER 
-				|| this.existsWinnerCounterAuxiliary == CROSS_WINNER ? Boolean.TRUE : Boolean.FALSE;
-		return this.existsWinner;
-	}
-
-	public boolean checkSecondPossibilityOfWinner(int[] jogo) {
-		this.existsWinnerCounterAuxiliary = jogo[3] + jogo[4] + jogo[5];
-		this.existsWinner = this.existsWinnerCounterAuxiliary == CIRCLE_WINNER
-				|| this.existsWinnerCounterAuxiliary == CROSS_WINNER ? Boolean.TRUE : Boolean.FALSE;
-		return this.existsWinner;
-	}
-
-	public boolean checkThirdPossibilityOfWinner(int[] jogo) {
-		this.existsWinnerCounterAuxiliary = jogo[6] + jogo[7] + jogo[8];
-		this.existsWinner = this.existsWinnerCounterAuxiliary == CIRCLE_WINNER
-				|| this.existsWinnerCounterAuxiliary == CROSS_WINNER ? Boolean.TRUE : Boolean.FALSE;
-		return this.existsWinner;
-	}
-
-	public boolean checkFourthPossibilityOfWinner(int[] jogo) {
-		this.existsWinnerCounterAuxiliary = jogo[0] + jogo[3] + jogo[6];
-		this.existsWinner = this.existsWinnerCounterAuxiliary == CIRCLE_WINNER
-				|| this.existsWinnerCounterAuxiliary == CROSS_WINNER ? Boolean.TRUE : Boolean.FALSE;
-		return this.existsWinner;
-	}
-
-	public boolean checkFifthPossibilityOfWinner(int[] jogo) {
-		this.existsWinnerCounterAuxiliary = jogo[1] + jogo[4] + jogo[7];
-		this.existsWinner = this.existsWinnerCounterAuxiliary == CIRCLE_WINNER
-				|| this.existsWinnerCounterAuxiliary == CROSS_WINNER ? Boolean.TRUE : Boolean.FALSE;
-		return this.existsWinner;
-	}
-
-	public boolean checkSixthPossibilityOfWinner(int[] jogo) {
-		this.existsWinnerCounterAuxiliary = jogo[2] + jogo[5] + jogo[8];
-		this.existsWinner = this.existsWinnerCounterAuxiliary == CIRCLE_WINNER
-				|| this.existsWinnerCounterAuxiliary == CROSS_WINNER ? Boolean.TRUE : Boolean.FALSE;
-		return this.existsWinner;
-	}
-
-	public boolean checkSeventhPossibilityOfWinner(int[] jogo) {
-		this.existsWinnerCounterAuxiliary = jogo[0] + jogo[4] + jogo[8];
-		this.existsWinner = this.existsWinnerCounterAuxiliary == CIRCLE_WINNER
-				|| this.existsWinnerCounterAuxiliary == CROSS_WINNER ? Boolean.TRUE : Boolean.FALSE;
-		return this.existsWinner;
-	}
-
-	public boolean checkEighthPossibilityOfWinner(int[] jogo) {
-		this.existsWinnerCounterAuxiliary = jogo[2] + jogo[4] + jogo[6];
-		this.existsWinner = this.existsWinnerCounterAuxiliary == CIRCLE_WINNER
-				|| this.existsWinnerCounterAuxiliary == CROSS_WINNER ? Boolean.TRUE : Boolean.FALSE;
-		return this.existsWinner;
-	}
-
 }

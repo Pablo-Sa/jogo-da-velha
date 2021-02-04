@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.poc.tic.tac.toe.dto.erros.DtoGame;
+import br.com.poc.tic.tac.toe.dto.DtoGame;
 import br.com.poc.tic.tac.toe.entity.EntityGame;
 import br.com.poc.tic.tac.toe.service.CheckExistsWinnerService;
 import br.com.poc.tic.tac.toe.service.UtilService;
@@ -34,9 +34,13 @@ public class TicTacToeResource {
 		
 		EntityGame entityGame = dto.convertEntityGame();
 		int[] jogo = this.utilService.convertStringInCollectionNumber(entityGame.getPositionsGame());
-		this.checkWinnerService.isVelha(jogo);
+		boolean existsWinner = this.checkWinnerService.isVelha(jogo);
 		
-		return new ResponseEntity<EntityGame>(HttpStatus.OK);
+		if(existsWinner) {
+			return new ResponseEntity<EntityGame>(HttpStatus.OK);
+		}
+		
+		return new ResponseEntity<EntityGame>(HttpStatus.NOT_FOUND);
 	}
 	
 }
