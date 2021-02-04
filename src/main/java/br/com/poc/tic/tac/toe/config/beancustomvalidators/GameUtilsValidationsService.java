@@ -34,12 +34,13 @@ public class GameUtilsValidationsService {
 		return Boolean.TRUE;
 	}
 	
-	public void verifyInvalidCharacter(char item) {
-		this.invalidCharacter = item != CIRCLE_FOUND && item != CROSS_FOUND ? Boolean.TRUE : Boolean.FALSE;
+	public boolean verifyInvalidCharacter(char item) {
+		return item != CIRCLE_FOUND && item != CROSS_FOUND ? Boolean.TRUE : Boolean.FALSE;
 	}
 	
-	public void verifyNumberOfOccurencesExceededPerLine(String occorences) {
-		this.numberOfOccurencesExceededFoundPerLine = occorences.length() > MAXIMUM_NUMBER_OF_RECORDS_PER_LINE ? Boolean.TRUE: Boolean.FALSE;
+	public boolean verifyNumberOfOccurencesExceededPerLine(String occorences) {
+		return occorences.length() > MAXIMUM_NUMBER_OF_RECORDS_PER_LINE
+				? Boolean.TRUE: Boolean.FALSE;
 	}
 	
 	public void verifyNumberOfOccurencesExceededPerColumn(int occorences) {
@@ -49,18 +50,26 @@ public class GameUtilsValidationsService {
 	public void verifyQuantityMinimumOfCircleOrCross(String[] positionsGame) {
 		for (int i = 0; i < positionsGame.length; i++) {
 			String item = positionsGame[i];
-			this.verifyNumberOfOccurencesExceededPerLine(item);
+			this.numberOfOccurencesExceededFoundPerLine = this.verifyNumberOfOccurencesExceededPerLine(item);
+			
+			if(this.numberOfOccurencesExceededFoundPerLine) {
+				break;
+			}
 			
 			for (int j = 0; j < item.length(); j++) {
-
 				if (item.charAt(j) == CIRCLE_FOUND) {
 					this.occurrencesOfCircle++;
 				}
-
 				if (item.charAt(j) == CROSS_FOUND) {
 					this.occurrencesOfCross++;
 				}
-				this.verifyInvalidCharacter(item.charAt(j));
+				this.invalidCharacter = this.verifyInvalidCharacter(item.charAt(j));
+				if(this.invalidCharacter) {
+					break;
+				}
+			}
+			if(this.invalidCharacter) {
+				break;
 			}
 		}
 		

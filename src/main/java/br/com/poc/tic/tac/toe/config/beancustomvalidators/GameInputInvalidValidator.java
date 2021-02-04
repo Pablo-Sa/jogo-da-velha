@@ -14,12 +14,6 @@ public class GameInputInvalidValidator implements ConstraintValidator<GameInputI
 	
 	@Override
 	public boolean isValid(String []value, ConstraintValidatorContext constraintValidatorContext) {
-
-			try {
-				return gameUtilService.validationInputPlayerCircleorCross(value);
-			} catch (Exception e) {
-				System.out.println(e.getMessage());
-			}
-		return true;
+		return gameUtilService.validationInputPlayerCircleorCross(value);
 	}
 }

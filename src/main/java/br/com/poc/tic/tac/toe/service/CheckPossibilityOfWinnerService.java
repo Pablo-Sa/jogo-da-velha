@@ -7,25 +7,25 @@ public class CheckPossibilityOfWinnerService {
 	private int[] rules = new int[8];
 	private static final int CIRCLE_WINNER = 0;
 	private static final int CROSS_WINNER = 3;
-	private static final int firstPossibility   = 0;
-	private static final int secondPossibility  = 1;
-	private static final int thirdPossibility   = 2;
-	private static final int fourthPossibility  = 3;
-	private static final int fifthPossibility   = 4;
-	private static final int sixthPossibility   = 5;
-	private static final int seventhPossibility = 6;
-	private static final int eighthPossibility  = 7;
+	private static final int FIRST_POSSIBILITY   = 0;
+	private static final int SECOND_POSSIBILITY  = 1;
+	private static final int THIRD_POSSIBILITY   = 2;
+	private static final int FOURTH_POSSIBILITY  = 3;
+	private static final int FIFTH_POSSIBILITY   = 4;
+	private static final int SIXTH_POSSIBILITY   = 5;
+	private static final int SEVENTH_POSSIBILITY = 6;
+	private static final int EIGHTH_POSSIBILITY  = 7;
 	private boolean foundWinner = Boolean.FALSE;
 
 	public boolean checkAllPossibilityOfWinner(int[] jogo) {
-		this.rules[firstPossibility]   = jogo[0] + jogo[1] + jogo[2];
-		this.rules[secondPossibility]  = jogo[3] + jogo[4] + jogo[5];
-		this.rules[thirdPossibility]   = jogo[6] + jogo[7] + jogo[8];
-		this.rules[fourthPossibility]  = jogo[0] + jogo[3] + jogo[6];
-		this.rules[fifthPossibility]   = jogo[1] + jogo[4] + jogo[7];
-		this.rules[sixthPossibility]   = jogo[2] + jogo[5] + jogo[8];
-		this.rules[seventhPossibility] = jogo[0] + jogo[4] + jogo[8];
-		this.rules[eighthPossibility]  = jogo[2] + jogo[4] + jogo[6];
+		this.rules[FIRST_POSSIBILITY]   = jogo[0] + jogo[1] + jogo[2];
+		this.rules[SECOND_POSSIBILITY]  = jogo[3] + jogo[4] + jogo[5];
+		this.rules[THIRD_POSSIBILITY]   = jogo[6] + jogo[7] + jogo[8];
+		this.rules[FOURTH_POSSIBILITY]  = jogo[0] + jogo[3] + jogo[6];
+		this.rules[FIFTH_POSSIBILITY]   = jogo[1] + jogo[4] + jogo[7];
+		this.rules[SIXTH_POSSIBILITY]   = jogo[2] + jogo[5] + jogo[8];
+		this.rules[SEVENTH_POSSIBILITY] = jogo[0] + jogo[4] + jogo[8];
+		this.rules[EIGHTH_POSSIBILITY]  = jogo[2] + jogo[4] + jogo[6];
 		
 		for (int i = 0; i < rules.length; i++) {
 			this.foundWinner = this.rules[i] == CIRCLE_WINNER || this.rules[i] == CROSS_WINNER ? Boolean.TRUE: Boolean.FALSE;
@@ -38,3 +38,4 @@ public class CheckPossibilityOfWinnerService {
 		return Boolean.FALSE;
 	}
 }
+
