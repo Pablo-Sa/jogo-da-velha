@@ -3,9 +3,6 @@ package br.com.poc.jogo.velha.service;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.poc.tic.tac.toe.service.UtilService;
 
@@ -38,7 +35,7 @@ public class UtilServiceTest {
 	}
 
 	@Test
-	public void entityGameTestSucess() {
+	public void utilServiceTest() {
 		this.positionsGameInNumberResultUtilServiceTest = this.utilService.convertStringInCollectionNumber(TEST_CASE);
 		Assert.assertArrayEquals(this.positionsGameInNumberTestCase, this.positionsGameInNumberResultUtilServiceTest);
 	}
