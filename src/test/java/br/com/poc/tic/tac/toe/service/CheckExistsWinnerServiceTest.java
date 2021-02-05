@@ -1,23 +1,17 @@
-package br.com.poc.jogo.velha.service;
+package br.com.poc.tic.tac.toe.service;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.BDDMockito.given;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import br.com.poc.tic.tac.toe.service.CheckExistsWinnerService;
-import br.com.poc.tic.tac.toe.service.CheckPossibilityOfWinnerService;
 
 public class CheckExistsWinnerServiceTest {
-
-	@Test
-	void contextLoads() {
-
-	}
 
 	@InjectMocks
 	private CheckExistsWinnerService checkExistsWinnerServiceTest;

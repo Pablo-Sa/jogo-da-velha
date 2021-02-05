@@ -1,4 +1,4 @@
-package br.com.poc.jogo.velha.dto;
+package br.com.poc.tic.tac.toe.dto;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -6,21 +6,14 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import br.com.poc.tic.tac.toe.dto.DtoGame;
 import br.com.poc.tic.tac.toe.entity.EntityGame;
 
 public class DtoGameTest {
-
-	@Test
-	void contextLoads() {
-
-	}
 
 	private DtoGame dtoGame;
 	private EntityGame entityGame;
 	private String positionsGameSucess = "OOXXOXXOX";
 	private String positionsGameError = "XXXXOXXXX";
-	private static final String DTO_GAME_FOR_ENTITY = "OOXXOXXOX";
 	private String[] data;
 
 	@BeforeEach

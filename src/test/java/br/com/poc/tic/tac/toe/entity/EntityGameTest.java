@@ -1,4 +1,4 @@
-package br.com.poc.jogo.velha.entity;
+package br.com.poc.tic.tac.toe.entity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -6,14 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import br.com.poc.tic.tac.toe.entity.EntityGame;
-
 public class EntityGameTest {
-	
-	@Test
-	void contextLoads() {
-
-	}
 	
 	private EntityGame entityGame;
 	private static final String TEST_CASE_SUCESS = "OOXXOXXOX"; 

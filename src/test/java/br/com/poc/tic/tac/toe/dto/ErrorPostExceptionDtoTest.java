@@ -1,18 +1,11 @@
-package br.com.poc.jogo.velha.dto;
+package br.com.poc.tic.tac.toe.dto;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import br.com.poc.tic.tac.toe.dto.ErrorPostExceptionDto;
-
 public class ErrorPostExceptionDtoTest {
-	
-	@Test
-	void contextLoads() {
-
-	}
 	
 	private ErrorPostExceptionDto errorPostExceptionDtoTest;
 	private static final String FIELD_CASE = "Jogo";

@@ -1,4 +1,4 @@
-package br.com.poc.jogo.velha.service;
+package br.com.poc.tic.tac.toe.service;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -6,14 +6,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import br.com.poc.tic.tac.toe.service.CheckPossibilityOfWinnerService;
-
 public class CheckPossibilityOfWinnerServiceTest {
-
-	@Test
-	void contextLoads() {
-
-	}
 
 	private CheckPossibilityOfWinnerService checkPossibilityOfWinnerServiceTest = new CheckPossibilityOfWinnerService();
 	private int[] firstPossibilityTestCase;

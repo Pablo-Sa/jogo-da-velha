@@ -20,7 +20,8 @@ public class GameUtilsValidationsService {
 		
 		this.occurrencesOfCircle = 0;
 		this.occurrencesOfCross = 0;
-		this.verifyNumberOfOccurencesExceededPerColumn(positionsGame.length);
+		this.numberOfOccurencesExceededFoundPerColumn =
+				this.verifyNumberOfOccurencesExceededPerColumn(positionsGame.length);
 		this.verifyQuantityMinimumOfCircleOrCross(positionsGame);
 
 		if (this.occurrencesOfCircle < MINIMUM_QUANTITY_OF_OCCURRENCES 
@@ -43,8 +44,8 @@ public class GameUtilsValidationsService {
 				? Boolean.TRUE: Boolean.FALSE;
 	}
 	
-	public void verifyNumberOfOccurencesExceededPerColumn(int occorences) {
-		this.numberOfOccurencesExceededFoundPerColumn =  occorences > MAXIMUM_NUMBER_OF_RECORDS_PER_COLUMN ? Boolean.TRUE: Boolean.FALSE;
+	public boolean verifyNumberOfOccurencesExceededPerColumn(int occorences) {
+		return occorences > MAXIMUM_NUMBER_OF_RECORDS_PER_COLUMN ? Boolean.TRUE: Boolean.FALSE;
 	}
 	
 	public void verifyQuantityMinimumOfCircleOrCross(String[] positionsGame) {
