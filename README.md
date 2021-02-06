@@ -40,7 +40,7 @@ Dentro do diretório root da aplicação executar os passos abaixo.
 O Maven através do `spring-boot-maven-plugin` gera o jar executável.
 Então basta entrar no diretório `target/` e executar:
 
-`$ java -jar target/br.com.poc.jogo.velha-0.0.1-SNAPSHOT.jar app.jar`
+`$ java -jar br.com.poc.jogo.velha-0.0.1-SNAPSHOT.jar app.jar`
 
 OBS: Caso apresente errro no comando acima tente informar todo o Diretório, então supondo que a pasta do projeto esteja em C:\
 Logo o Comando Será : 
