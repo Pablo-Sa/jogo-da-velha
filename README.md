@@ -50,7 +50,7 @@ A partir deste ponto se tudo ocorrer corretamente a aplicação estará executan
 
 É possível utilizar o client do swagger através da url [http://localhost/swagger-ui.html]
 
-## Principais tecnologias e frameworks utilizados (Back-End)
+## Principais tecnologias e frameworks utilizados
 
 - Spring Boot
 - JUnit 5
