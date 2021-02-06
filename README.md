@@ -12,6 +12,9 @@
     * https://poc-jogo-da-velha.herokuapp.com/swagger-ui.html  
     
    OBS: Esta é uma conta gratuita do Heroku, então ao tentar acessar a API pela primeira vez, bem provavelmente que irá demorar responder um pouco, pois por se tratar de conta gratuita o ambiente não fica disponível para acesso imediato, existirá um Delay, como uma inicialização do ambiente de onde a mesma está alocada, após aguardar uns instantes, a aplicação estará disponível e com funcionamento similar a uma em produção.
+   
+## Stress Test - JMter
+* Foi utilizado a ferramenta JMter para realização dos testes de Stress, na pasta raíz do projeto se encontra uma pasta chamada `StressTest` onde contém os relatórios dos testes bem como o arquivo de template do teste onde pode ser importado na ferramenta para configuração dos parâmetros dos testes de forma automática para que seja possível a execução dos testes pela ferramenta sem a necessidade de se configurar novo teste. Em síntese realizei um teste informado 100 Usuários Virtuais com 5 requisições cada totalizando 500 requisições e a resposta do teste foi excelente, menos de 2% de perda levando em consideração que meu ambiente não foi o mais apropriado para execução de tal teste, no serviço de ECS da AWS o mesmo não permite pois o IP é bloqueado temporariamente.
 
 ## DOCKER
 Caso Queira Executar tal aplicação em um Container Docker, ambiente Ubuntu ou Windows, favor executar os passos abaixo.
