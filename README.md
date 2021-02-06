@@ -11,7 +11,7 @@
 
     * https://poc-jogo-da-velha.herokuapp.com/swagger-ui.html  
     
-   OBS: Esta é uma conta gratuita do Heroku, então ao tentar acessar a API pela primeira vez, bem provavelmente que irá demorar responder um pouco, pois por se tratar de conta gratuita o ambiente não fica disponível para acesso imediato, existirá um Delay, como uma inicialização do ambiente de onde a mesma está alocada, após aguardar uns instantes, a aplicação está disponível e com funcionamente similar a uma em produção
+   OBS: Esta é uma conta gratuita do Heroku, então ao tentar acessar a API pela primeira vez, bem provavelmente que irá demorar responder um pouco, pois por se tratar de conta gratuita o ambiente não fica disponível para acesso imediato, existirá um Delay, como uma inicialização do ambiente de onde a mesma está alocada, após aguardar uns instantes, a aplicação está disponível e com funcionamente similar a uma em produção.
 
 ## DOCKER
 Caso Queira Executar tal aplicação em um Container Docker, ambiente Ubuntu ou Windows, favor executar os passos abaixo.
