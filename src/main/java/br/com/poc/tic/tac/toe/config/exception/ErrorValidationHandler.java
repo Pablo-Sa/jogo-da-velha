@@ -1,4 +1,4 @@
-package br.com.poc.tic.tac.toe.config.validation;
+package br.com.poc.tic.tac.toe.config.exception;
 
 import java.util.ArrayList;
 import java.util.List;
