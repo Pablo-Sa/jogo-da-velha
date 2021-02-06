@@ -15,7 +15,8 @@
 
 ## DOCKER
 Caso Queira Executar tal aplicação em um Container Docker, ambiente Ubuntu ou Windows, favor executar os passos abaixo.
-- Partindo do pressuposto que já tenha instalado o Docker e o Docker-Compose em seu host S.O Linx como : Ubuntu, CentoOS e derivados ou Windows.
+- Partindo do pressuposto que já tenha instalado o Docker e o Docker-Compose em seu host S.O Linx como : Ubuntu, CentoOS e derivados ou Windows e que já tenha gerado
+o build da aplicação através do maven.
  - Somente  à partir do Arquivo `Docker-Compose.Yml` que se encontra na pasta raiz do projeto é possível gerar uma imagem Docker e por fim criar o Container.
  Basta simplesmente executar com o comando --> `docker-compose up`.
 
