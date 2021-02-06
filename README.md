@@ -60,7 +60,8 @@ A partir deste ponto se tudo ocorrer corretamente a aplicação estará executan
 - Bean Validation
 
 ## Bean Validation
-Utilizado o mesmo para validações na Entidade DtoGame, tanto anotações padrões, bem como também foi criada uma anotação customizada.
+Utilizado o mesmo para validações na Entidade DtoGame, tanto anotações padrões, bem como também foi criada uma anotação customizada para validações se o jogo
+que foi informado de fato é um jogo válido e várias outras validações.
 
 ## Lombok
 Utilizado as anotações do Lombok para geração dos Getters and Setters e Construtores.
