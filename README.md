@@ -2,9 +2,6 @@
 
 
 # Deploy
-## AWS - Elastic Container Service (ECS)
-### Link direto para a documentação da Aplicação: http://ec2co-ecsel-no4rlbq56f2z-1148948020.us-east-2.elb.amazonaws.com/swagger-ui.html
-
 
 ## Heroku
 * Fiz o Deploy desta aplicação no Heroku, abaixo segue o Link de acesso a mesma, tal lhe redirecionará para a página de documentação da API, feita utilizando o Framework Swagger, que através dela, poderá verificar todos os EndPoints disponíveis, bem como a utilização dos mesmos, assim caso queria testar o funcionamento da mesma sem precisar ambientar nada basta clicar no link abaixo.
